@@ -14,7 +14,7 @@ var options = {
 
 transResultToPage()
 
-parsePhotos(__dirname + '/images', function (err, paths) {
+parsePhotos('/data/images', function (err, paths) {
   // console.log('photos path', paths);
   paths.forEach(function (path) {
     var fileName = path.split('/').pop()
@@ -42,7 +42,7 @@ function renderIndex (app, pages) {
 
 function getPages () {
   return new Promise(function (resolve, reject) {
-    Page.find().sort({_id: -1}).limit(10).then(function (pages) {
+    Page.find().sort({_id: -1}).then(function (pages) {
       pages = _.filter(pages, function (page) {
         return page.result.img_url && (page.result.img_url.length > 0)
       })

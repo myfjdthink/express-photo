@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://ten:57017/resultdb', {useMongoClient: true});
+var mongo_url = process.env.MONGO_URL || 'mongodb://ten:57017/resultdb'
+var db = mongoose.connect(mongo_url, {useMongoClient: true});
 mongoose.Promise = global.Promise;
 mongoose.set('debug', true)
 

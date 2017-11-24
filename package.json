@@ -13,7 +13,6 @@
     "express-photo-gallery": "^1.0.9",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.4",
-    "mustache": "^2.3.0",
-    "pug": "^2.0.0-rc.4"
+    "mustache": "^2.3.0"
   }
 }
