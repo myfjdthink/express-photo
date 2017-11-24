@@ -14,13 +14,13 @@ var options = {
 
 transResultToPage()
 
-parsePhotos(__dirname + '/photos', function (err, paths) {
+parsePhotos(__dirname + '/images', function (err, paths) {
   // console.log('photos path', paths);
   paths.forEach(function (path) {
     var fileName = path.split('/').pop()
     console.log('register path', path);
     console.log('register fileName', fileName);
-    app.use('/photos/' + fileName, Gallery(path, options));
+    app.use('/images/' + fileName, Gallery(path, options));
   });
   getPages().then(function (results) {
     console.log('pages', results);
